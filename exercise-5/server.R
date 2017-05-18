@@ -15,7 +15,7 @@ womens.role <- womensrole
 shinyServer(function(input, output) {
    
   #plotNameHere will become what you named your plot in the UI
-  output$plotNamehere <- renderPlot({
+  output$'Womens Role Plot' <- renderPlot({
     
     #Here use your different input values to define what data is used to render your plot
     #The x axis will be the level of education
@@ -45,7 +45,7 @@ shinyServer(function(input, output) {
     #x will be defined by education, y by agree/disagree
     #Bonus: Factor the color field by sex 
     #(this will allow you to visually see the difference between Men and Women when Both are selected)
-    ggplot(plot.data, aes(x = education, y = opinion, color = factor(sex)))+geom_point()
+    ggplot(plot.data, aes(x = education, y = opinion, color = factor(sex)))+ geom_point()
     
   })
   
