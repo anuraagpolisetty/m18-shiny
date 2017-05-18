@@ -10,5 +10,11 @@ library(shiny)
 # It should return a rendered plot
 shinyServer(function(input, output) {
   # Save a 'scatter' property which is a renderPlot object (that renders a scatterplot)
-  
+  output$scatter <- renderPlot({
+    x <- rnorm(input$num) # Old Faithful Geyser data
+    y <- rnorm(input$num)
+    
+    # draw the histogram with the specified number of bins
+    hist(plot(x,y), col=input$color)
+  })
 })
